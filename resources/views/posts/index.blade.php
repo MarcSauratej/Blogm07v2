@@ -105,6 +105,9 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
+                    ID
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Image
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -114,13 +117,15 @@
                     Body
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Tag
-                </th>
-                <th scope="col" class="px-6 py-3">
                     Date
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Action
+                    Tag                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action Tag
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action Post
                 </th>
             </tr>
         </thead>
@@ -144,15 +149,20 @@
                     {{$post->body}}
                 </td>
                 <td class="px-6 py-4">
-                    @foreach ($post->tags as $tag)
-                         <h4><span class="badge badge-info">{{ $tag->tag }}</span></h4>
-                      @endforeach
-                </td>
-                <td class="px-6 py-4">
                     {{$post->created_at}}
                 </td>
                 <td class="px-6 py-4">
-                    <a href="{{route('posts.delete',$post->id)}}" class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete</a>
+                    @foreach ($post->tags as $tag)
+                         <h4><span class="badge badge-info">{{ $tag->tag }}</span></h4>
+                         <td class="px-6 py-4">
+                            <a href="{{route('tag.delete',$tag->id)}}" class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete Tag</a>
+                        </td>
+                      @endforeach
+                </td>
+
+
+                <td class="px-6 py-4">
+                    <a href="{{route('posts.delete',$post->id)}}" class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete Post</a>
                 </td>
             </tr>
             @endforeach

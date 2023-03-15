@@ -42,6 +42,7 @@ Route::post('/posts',[PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/delete/{id}',[PostController::class, 'destroy'])->name('posts.delete');
 
 Route::post('/tags',[TagController::class, 'store'])->name('tag.store');
+Route::get('/tags/delete/{id}',[TagController::class, 'destroy'])->name('tag.delete');
 
 //Route::post('/comments',[CommentController::class, 'store'])->name('comment.store');
 

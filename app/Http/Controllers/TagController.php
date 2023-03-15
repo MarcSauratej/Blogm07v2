@@ -68,8 +68,10 @@ class TagController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tag $tag)
+    public function destroy( $tag_id)
     {
-        //
+        $tag=Tag::find($tag_id);
+            $tag->delete();
+            return redirect()->route('posts.index');
     }
 }

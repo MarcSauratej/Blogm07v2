@@ -27,8 +27,8 @@
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$post->created_at}}</p>
 
                 @foreach ($post->tags as $tag)
-                         <h4><span class="badge badge-info">{{ $tag->tag }}</span></h4>
-                      @endforeach
+                         <h4><span class="tag">{{ $tag->tag }}</span></h4>
+                @endforeach
             </div>
 
         </div>

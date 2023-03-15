@@ -159,8 +159,6 @@
                         </td>
                       @endforeach
                 </td>
-
-
                 <td class="px-6 py-4">
                     <a href="{{route('posts.delete',$post->id)}}" class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete Post</a>
                 </td>
